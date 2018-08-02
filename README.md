@@ -1,6 +1,6 @@
 # What's this repo for?
 
-LearnTexture contains demos for Texture[http://texturegroup.org/docs/layout2-quickstart.html] which is known as ASDK.
+LearnTexture contains demos for [Texture](http://texturegroup.org/docs/layout2-quickstart.html) which is known as ASDK.
 
 Texture's repo has many demos, but I think they are to tricky to use, you have to switch to the directory and type `pod install` at cmd, and those demos are not well-orginized and confusing.
 
