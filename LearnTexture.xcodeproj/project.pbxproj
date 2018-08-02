@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A44AF18C52ACD1D5E77FE10B /* libPods-LearnTexture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA052AC64C3B9E1A5E68C10 /* libPods-LearnTexture.a */; };
 		CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D382113615F00B75E13 /* AppDelegate.m */; };
 		CBA32D3C2113615F00B75E13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D3B2113615F00B75E13 /* ViewController.m */; };
 		CBA32D3F2113615F00B75E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D3D2113615F00B75E13 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87B4246D9E4775F2806BB16F /* Pods-LearnTexture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnTexture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnTexture/Pods-LearnTexture.debug.xcconfig"; sourceTree = "<group>"; };
+		8AA052AC64C3B9E1A5E68C10 /* libPods-LearnTexture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnTexture.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA32D342113615F00B75E13 /* LearnTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA32D372113615F00B75E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA32D382113615F00B75E13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		CBA32D432113616000B75E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBA32D452113616000B75E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBA32D462113616000B75E13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F62A37FC892039E76D54A67F /* Pods-LearnTexture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnTexture.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnTexture/Pods-LearnTexture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A44AF18C52ACD1D5E77FE10B /* libPods-LearnTexture.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BA1B606EE44359698FFF61E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87B4246D9E4775F2806BB16F /* Pods-LearnTexture.debug.xcconfig */,
+				F62A37FC892039E76D54A67F /* Pods-LearnTexture.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B14131FB668E2ED1241C6C7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AA052AC64C3B9E1A5E68C10 /* libPods-LearnTexture.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CBA32D2B2113615F00B75E13 = {
 			isa = PBXGroup;
 			children = (
 				CBA32D362113615F00B75E13 /* LearnTexture */,
 				CBA32D352113615F00B75E13 /* Products */,
+				9BA1B606EE44359698FFF61E /* Pods */,
+				B14131FB668E2ED1241C6C7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBA32D4A2113616000B75E13 /* Build configuration list for PBXNativeTarget "LearnTexture" */;
 			buildPhases = (
+				CDCBE31777B187187892A334 /* [CP] Check Pods Manifest.lock */,
 				CBA32D302113615F00B75E13 /* Sources */,
 				CBA32D312113615F00B75E13 /* Frameworks */,
 				CBA32D322113615F00B75E13 /* Resources */,
@@ -135,6 +160,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDCBE31777B187187892A334 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearnTexture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CBA32D302113615F00B75E13 /* Sources */ = {
@@ -281,6 +327,7 @@
 		};
 		CBA32D4B2113616000B75E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87B4246D9E4775F2806BB16F /* Pods-LearnTexture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +345,7 @@
 		};
 		CBA32D4C2113616000B75E13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F62A37FC892039E76D54A67F /* Pods-LearnTexture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
