@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A44AF18C52ACD1D5E77FE10B /* libPods-LearnTexture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA052AC64C3B9E1A5E68C10 /* libPods-LearnTexture.a */; };
+		CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34F4432113673F00DB3C83 /* MasterViewController.m */; };
 		CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D382113615F00B75E13 /* AppDelegate.m */; };
-		CBA32D3C2113615F00B75E13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D3B2113615F00B75E13 /* ViewController.m */; };
-		CBA32D3F2113615F00B75E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D3D2113615F00B75E13 /* Main.storyboard */; };
 		CBA32D412113616000B75E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D402113616000B75E13 /* Assets.xcassets */; };
 		CBA32D442113616000B75E13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D422113616000B75E13 /* LaunchScreen.storyboard */; };
 		CBA32D472113616000B75E13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D462113616000B75E13 /* main.m */; };
@@ -19,12 +18,11 @@
 /* Begin PBXFileReference section */
 		87B4246D9E4775F2806BB16F /* Pods-LearnTexture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnTexture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnTexture/Pods-LearnTexture.debug.xcconfig"; sourceTree = "<group>"; };
 		8AA052AC64C3B9E1A5E68C10 /* libPods-LearnTexture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnTexture.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB34F4422113673F00DB3C83 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		CB34F4432113673F00DB3C83 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		CBA32D342113615F00B75E13 /* LearnTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA32D372113615F00B75E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA32D382113615F00B75E13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CBA32D3A2113615F00B75E13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CBA32D3B2113615F00B75E13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CBA32D3E2113615F00B75E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBA32D402113616000B75E13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBA32D432113616000B75E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBA32D452113616000B75E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,9 +82,8 @@
 			children = (
 				CBA32D372113615F00B75E13 /* AppDelegate.h */,
 				CBA32D382113615F00B75E13 /* AppDelegate.m */,
-				CBA32D3A2113615F00B75E13 /* ViewController.h */,
-				CBA32D3B2113615F00B75E13 /* ViewController.m */,
-				CBA32D3D2113615F00B75E13 /* Main.storyboard */,
+				CB34F4422113673F00DB3C83 /* MasterViewController.h */,
+				CB34F4432113673F00DB3C83 /* MasterViewController.m */,
 				CBA32D402113616000B75E13 /* Assets.xcassets */,
 				CBA32D422113616000B75E13 /* LaunchScreen.storyboard */,
 				CBA32D452113616000B75E13 /* Info.plist */,
@@ -155,7 +152,6 @@
 			files = (
 				CBA32D442113616000B75E13 /* LaunchScreen.storyboard in Resources */,
 				CBA32D412113616000B75E13 /* Assets.xcassets in Resources */,
-				CBA32D3F2113615F00B75E13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,8 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA32D3C2113615F00B75E13 /* ViewController.m in Sources */,
 				CBA32D472113616000B75E13 /* main.m in Sources */,
+				CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */,
 				CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,14 +192,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CBA32D3D2113615F00B75E13 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBA32D3E2113615F00B75E13 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CBA32D422113616000B75E13 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -333,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65U732MLC9;
 				INFOPLIST_FILE = LearnTexture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65U732MLC9;
 				INFOPLIST_FILE = LearnTexture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
