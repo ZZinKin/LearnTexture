@@ -16,6 +16,10 @@
 
 @implementation TextTableNodeController
 
+- (void)dealloc {
+    NSLog(@"TextTableNodeController dealloc ♻️");
+}
+
 - (instancetype)initWithTexts:(NSArray<NSString*> *)text {
     ASTableNode *tableNode = [[ASTableNode alloc] init];
     self = [super initWithNode:tableNode];
@@ -39,7 +43,7 @@
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self) weakSelf = self;
     return ^ASCellNode * _Nonnull(void) {
-        typeof(self) sself = weakSelf;
+        typeof(weakSelf) sself = weakSelf;
         ASTextCellNode *textCellNode = [[ASTextCellNode alloc] init];
         textCellNode.text = sself.texts[indexPath.row];
         return textCellNode;

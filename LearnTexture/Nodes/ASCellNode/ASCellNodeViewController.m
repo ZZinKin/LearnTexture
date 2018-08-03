@@ -34,7 +34,7 @@ static NSArray *textsExample;
         [node addSubnode:pageNode];
         __weak typeof(self) weakSelf = self;
         node.layoutSpecBlock = ^ASLayoutSpec * _Nonnull(__kindof ASDisplayNode * _Nonnull node, ASSizeRange constrainedSize) {
-            typeof(self) sself = weakSelf;
+            typeof(weakSelf) sself = weakSelf;
             return [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(CGRectGetMaxY(sself.navigationController.navigationBar.frame), 0, 0, 0) child:pageNode];
         };
     }

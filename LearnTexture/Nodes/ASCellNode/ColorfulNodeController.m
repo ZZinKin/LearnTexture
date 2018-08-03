@@ -20,6 +20,11 @@ static const NSInteger numberOfItems = 1000;
 
 @implementation ColorfulNodeController
 
+- (void)dealloc {
+    NSLog(@"ColorfulNodeController dealloc ♻️");
+}
+
+
 - (ASCollectionNode *)node {
     return (ASCollectionNode *)[super node];
 }
@@ -52,7 +57,7 @@ static const NSInteger numberOfItems = 1000;
 - (ASCellNodeBlock)collectionNode:(ASCollectionNode *)collectionNode nodeBlockForItemAtIndexPath:(NSIndexPath *)indexPath {
     __weak typeof(self) weakSelf = self;
     return ^ASCellNode * _Nonnull(void) {
-        typeof(self) sself = weakSelf;
+        typeof(weakSelf) sself = weakSelf;
         ColorfulCellNode *node = [[ColorfulCellNode alloc] init];
         node.color = sself.colors[indexPath.row];
         return node;
