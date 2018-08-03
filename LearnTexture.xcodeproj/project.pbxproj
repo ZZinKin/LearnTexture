@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A44AF18C52ACD1D5E77FE10B /* libPods-LearnTexture.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA052AC64C3B9E1A5E68C10 /* libPods-LearnTexture.a */; };
 		BCA1850D2113E869008666CE /* MasterCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA1850C2113E869008666CE /* MasterCellNode.m */; };
+		BCA185172113F2EA008666CE /* ASDisplayNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA185162113F2EA008666CE /* ASDisplayNodeViewController.m */; };
+		BCA1851A211403D0008666CE /* ASCellNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA18519211403D0008666CE /* ASCellNodeViewController.m */; };
 		CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34F4432113673F00DB3C83 /* MasterViewController.m */; };
 		CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D382113615F00B75E13 /* AppDelegate.m */; };
 		CBA32D412113616000B75E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D402113616000B75E13 /* Assets.xcassets */; };
@@ -21,6 +23,10 @@
 		8AA052AC64C3B9E1A5E68C10 /* libPods-LearnTexture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnTexture.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA1850B2113E869008666CE /* MasterCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterCellNode.h; sourceTree = "<group>"; };
 		BCA1850C2113E869008666CE /* MasterCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterCellNode.m; sourceTree = "<group>"; };
+		BCA185152113F2EA008666CE /* ASDisplayNodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASDisplayNodeViewController.h; sourceTree = "<group>"; };
+		BCA185162113F2EA008666CE /* ASDisplayNodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASDisplayNodeViewController.m; sourceTree = "<group>"; };
+		BCA18518211403D0008666CE /* ASCellNodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCellNodeViewController.h; sourceTree = "<group>"; };
+		BCA18519211403D0008666CE /* ASCellNodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCellNodeViewController.m; sourceTree = "<group>"; };
 		CB34F4422113673F00DB3C83 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		CB34F4432113673F00DB3C83 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		CBA32D342113615F00B75E13 /* LearnTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +79,31 @@
 			path = Master;
 			sourceTree = "<group>";
 		};
+		BCA185122113F10C008666CE /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				BCA185152113F2EA008666CE /* ASDisplayNodeViewController.h */,
+				BCA185162113F2EA008666CE /* ASDisplayNodeViewController.m */,
+				BCA18518211403D0008666CE /* ASCellNodeViewController.h */,
+				BCA18519211403D0008666CE /* ASCellNodeViewController.m */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		BCA185132113F116008666CE /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		BCA185142113F11D008666CE /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
 		CBA32D2B2113615F00B75E13 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +128,9 @@
 				CBA32D372113615F00B75E13 /* AppDelegate.h */,
 				CBA32D382113615F00B75E13 /* AppDelegate.m */,
 				BCA185112113F005008666CE /* Master */,
+				BCA185122113F10C008666CE /* Nodes */,
+				BCA185132113F116008666CE /* Layouts */,
+				BCA185142113F11D008666CE /* Demos */,
 				CBA32D402113616000B75E13 /* Assets.xcassets */,
 				CBA32D422113616000B75E13 /* LaunchScreen.storyboard */,
 				CBA32D452113616000B75E13 /* Info.plist */,
@@ -196,7 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA1851A211403D0008666CE /* ASCellNodeViewController.m in Sources */,
 				CBA32D472113616000B75E13 /* main.m in Sources */,
+				BCA185172113F2EA008666CE /* ASDisplayNodeViewController.m in Sources */,
 				BCA1850D2113E869008666CE /* MasterCellNode.m in Sources */,
 				CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */,
 				CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */,
