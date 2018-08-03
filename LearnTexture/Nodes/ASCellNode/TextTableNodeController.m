@@ -41,7 +41,7 @@
     return ^ASCellNode * _Nonnull(void) {
         typeof(self) sself = weakSelf;
         ASTextCellNode *textCellNode = [[ASTextCellNode alloc] init];
-        textCellNode.text = self.texts[indexPath.row];
+        textCellNode.text = sself.texts[indexPath.row];
         return textCellNode;
     };
 }

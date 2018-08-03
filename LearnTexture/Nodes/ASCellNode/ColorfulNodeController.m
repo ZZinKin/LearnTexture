@@ -54,7 +54,7 @@ static const NSInteger numberOfItems = 1000;
     return ^ASCellNode * _Nonnull(void) {
         typeof(self) sself = weakSelf;
         ColorfulCellNode *node = [[ColorfulCellNode alloc] init];
-        node.color = self.colors[indexPath.row];
+        node.color = sself.colors[indexPath.row];
         return node;
     };
 }
