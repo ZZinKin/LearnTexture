@@ -9,7 +9,9 @@
 #import "MasterViewController.h"
 #import "MasterCellNode.h"
 
-static NSArray *sectionTitles = nil;
+static NSArray *sectionTitles;
+static NSArray<NSArray<NSString*>*> *classNames;
+
 
 @interface MasterViewController () <ASTableDelegate, ASTableDataSource>
 
@@ -32,6 +34,10 @@ static NSArray *sectionTitles = nil;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             sectionTitles = @[@"Nodes", @"Layouts", @"Demos"];
+            classNames = @[@[@"",@"ASDisplayNode"],
+                           @[@""],
+                           @[@""]
+                           ];
         });
     }
     
@@ -50,44 +56,31 @@ static NSArray *sectionTitles = nil;
 }
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"select node: %@", indexPath);
+    // The naming convension
+    NSString *className = [NSString stringWithFormat:@"%@ViewController", classNames[indexPath.section][indexPath.row]];
+    Class cls = NSClassFromString(className);
+    if (cls) {
+        UIViewController *viewController = [[cls alloc] init];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
     [tableNode deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /**
- * Provides the constrained size range for measuring the row at the index path.
- * Note: the widths in the returned size range are ignored!
- *
- * @param tableNode The sender.
- *
- * @param indexPath The index path of the node.
- *
- * @return A constrained size range for layout the node at this index path.
- *
  * @note implement this method with a specific size constrains the cell with a fix size
  */
 - (ASSizeRange)tableNode:(ASTableNode *)tableNode constrainedSizeForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return ASSizeRangeUnconstrained; //default
+    return ASSizeRangeUnconstrained;
 }
 
 #pragma mark - ASTableDataSource
 
-/**
- * Asks the data source for the number of sections in the table node.
- *
- * @see @c numberOfSectionsInTableView:
- */
 - (NSInteger)numberOfSectionsInTableNode:(ASTableNode *)tableNode {
     return sectionTitles.count;
 }
 
-/**
- * Asks the data source for the number of rows in the given section of the table node.
- *
- * @see @c numberOfSectionsInTableView:
- */
 - (NSInteger)tableNode:(ASTableNode *)tableNode numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return classNames[section].count;
 }
 
 /**
@@ -114,7 +107,7 @@ static NSArray *sectionTitles = nil;
                                          NSForegroundColorAttributeName: [UIColor darkGrayColor]};
             cell.textNode.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
         } else {
-            NSString *text = [NSString stringWithFormat:@"%@:%@",@(indexPath.section), @(indexPath.row)];
+            NSString *text = classNames[indexPath.section][indexPath.row];
             NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15],
                                          NSForegroundColorAttributeName: [UIColor blackColor]};
             cell.textNode.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
