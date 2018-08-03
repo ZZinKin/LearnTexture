@@ -7,6 +7,9 @@
 //
 
 #import "MasterViewController.h"
+#import "MasterCellNode.h"
+
+static NSArray *sectionTitles = nil;
 
 @interface MasterViewController () <ASTableDelegate, ASTableDataSource>
 
@@ -25,6 +28,11 @@
     if (self) {
         _tableNode.dataSource = self;
         _tableNode.delegate = self;
+        
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            sectionTitles = @[@"Nodes", @"Layouts", @"Demos"];
+        });
     }
     
     return self;
@@ -32,9 +40,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Examples";
 }
 
 #pragma mark - ASTableDelegate
+
+- (BOOL)tableNode:(ASTableNode *)tableNode shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.row != 0; //header should not be highlighted
+}
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"select node: %@", indexPath);
@@ -50,9 +63,11 @@
  * @param indexPath The index path of the node.
  *
  * @return A constrained size range for layout the node at this index path.
+ *
+ * @note implement this method with a specific size constrains the cell with a fix size
  */
 - (ASSizeRange)tableNode:(ASTableNode *)tableNode constrainedSizeForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return ASSizeRangeMake(CGSizeMake(UIScreen.mainScreen.bounds.size.width, 100));
+    return ASSizeRangeUnconstrained; //default
 }
 
 #pragma mark - ASTableDataSource
@@ -63,7 +78,7 @@
  * @see @c numberOfSectionsInTableView:
  */
 - (NSInteger)numberOfSectionsInTableNode:(ASTableNode *)tableNode {
-    return 3;
+    return sectionTitles.count;
 }
 
 /**
@@ -72,7 +87,7 @@
  * @see @c numberOfSectionsInTableView:
  */
 - (NSInteger)tableNode:(ASTableNode *)tableNode numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 /**
@@ -91,7 +106,20 @@
  */
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
     return ^ASCellNode * _Nonnull(void) {
-        ASCellNode *cell = ASCellNode.new;
+        MasterCellNode *cell = MasterCellNode.new;
+        cell.isHeader = indexPath.row == 0;
+        if (cell.isHeader) {
+            NSString *text = sectionTitles[indexPath.section];
+            NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:20],
+                                         NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+            cell.textNode.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
+        } else {
+            NSString *text = [NSString stringWithFormat:@"%@:%@",@(indexPath.section), @(indexPath.row)];
+            NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15],
+                                         NSForegroundColorAttributeName: [UIColor blackColor]};
+            cell.textNode.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
+        }
+        
         return cell;
     };
 }
