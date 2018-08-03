@@ -34,7 +34,7 @@ static NSArray<NSArray<NSString*>*> *classNames;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             sectionTitles = @[@"Nodes", @"Layouts", @"Demos"];
-            classNames = @[@[@"",@"ASDisplayNode"],
+            classNames = @[@[@"",@"ASDisplayNode", @"ASCellNode"],
                            @[@""],
                            @[@""]
                            ];
