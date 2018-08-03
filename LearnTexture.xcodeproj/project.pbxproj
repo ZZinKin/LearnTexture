@@ -15,6 +15,7 @@
 		BCA185292114212F008666CE /* ColorfulNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA185282114212F008666CE /* ColorfulNodeController.m */; };
 		BCA1852C2114233C008666CE /* ColorfulCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA1852B2114233C008666CE /* ColorfulCellNode.m */; };
 		BCA1852F21143659008666CE /* TopNavigationNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA1852E21143659008666CE /* TopNavigationNode.m */; };
+		BCA1853A211484B3008666CE /* ASButtonNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA18539211484B3008666CE /* ASButtonNodeViewController.m */; };
 		CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34F4432113673F00DB3C83 /* MasterViewController.m */; };
 		CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D382113615F00B75E13 /* AppDelegate.m */; };
 		CBA32D412113616000B75E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D402113616000B75E13 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 		BCA1852B2114233C008666CE /* ColorfulCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorfulCellNode.m; sourceTree = "<group>"; };
 		BCA1852D21143659008666CE /* TopNavigationNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopNavigationNode.h; sourceTree = "<group>"; };
 		BCA1852E21143659008666CE /* TopNavigationNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopNavigationNode.m; sourceTree = "<group>"; };
+		BCA18538211484B3008666CE /* ASButtonNodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASButtonNodeViewController.h; sourceTree = "<group>"; };
+		BCA18539211484B3008666CE /* ASButtonNodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASButtonNodeViewController.m; sourceTree = "<group>"; };
 		CB34F4422113673F00DB3C83 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		CB34F4432113673F00DB3C83 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		CBA32D342113615F00B75E13 /* LearnTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +99,7 @@
 			children = (
 				BCA18522211407C0008666CE /* ASDisplayNode */,
 				BCA18523211407C9008666CE /* ASCellNode */,
+				BCA185372114847B008666CE /* ASButtonNode */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -138,6 +142,15 @@
 				BCA1852B2114233C008666CE /* ColorfulCellNode.m */,
 			);
 			path = ASCellNode;
+			sourceTree = "<group>";
+		};
+		BCA185372114847B008666CE /* ASButtonNode */ = {
+			isa = PBXGroup;
+			children = (
+				BCA18538211484B3008666CE /* ASButtonNodeViewController.h */,
+				BCA18539211484B3008666CE /* ASButtonNodeViewController.m */,
+			);
+			path = ASButtonNode;
 			sourceTree = "<group>";
 		};
 		CBA32D2B2113615F00B75E13 = {
@@ -274,6 +287,7 @@
 				BCA1852C2114233C008666CE /* ColorfulCellNode.m in Sources */,
 				CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */,
 				BCA1852621140885008666CE /* TextTableNodeController.m in Sources */,
+				BCA1853A211484B3008666CE /* ASButtonNodeViewController.m in Sources */,
 				CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */,
 				BCA1852F21143659008666CE /* TopNavigationNode.m in Sources */,
 			);

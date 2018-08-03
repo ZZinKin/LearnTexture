@@ -34,7 +34,7 @@ static NSArray<NSArray<NSString*>*> *classNames;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             sectionTitles = @[@"Nodes", @"Layouts", @"Demos"];
-            classNames = @[@[@"",@"ASDisplayNode", @"ASCellNode"],
+            classNames = @[@[@"",@"ASDisplayNode", @"ASCellNode", @"ASButtonNode"],
                            @[@""],
                            @[@""]
                            ];
@@ -57,10 +57,12 @@ static NSArray<NSArray<NSString*>*> *classNames;
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // The naming convension
-    NSString *className = [NSString stringWithFormat:@"%@ViewController", classNames[indexPath.section][indexPath.row]];
+    NSString *classNamePrefix = classNames[indexPath.section][indexPath.row];
+    NSString *className = [NSString stringWithFormat:@"%@ViewController", classNamePrefix];
     Class cls = NSClassFromString(className);
     if (cls) {
         UIViewController *viewController = [[cls alloc] init];
+        viewController.title = classNamePrefix;
         [self.navigationController pushViewController:viewController animated:YES];
     }
     [tableNode deselectRowAtIndexPath:indexPath animated:YES];

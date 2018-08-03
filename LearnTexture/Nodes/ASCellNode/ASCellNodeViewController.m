@@ -68,6 +68,10 @@ static NSArray *textsExample;
     return self;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
 #pragma mark - ASCollectionDelegate
 
 - (void)collectionNode:(ASCollectionNode *)collectionNode didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
