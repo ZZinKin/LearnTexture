@@ -47,6 +47,7 @@ static const NSInteger numberOfItems = 1000;
             [colorCollection addObject:[UIColor colorWithRed:RANDOM_FLOAT_VALUE green:RANDOM_FLOAT_VALUE blue:RANDOM_FLOAT_VALUE alpha:1.0]];
         }
         self.colors = colorCollection.copy;
+        [self.node setNeedsLayout];
     });
 }
 

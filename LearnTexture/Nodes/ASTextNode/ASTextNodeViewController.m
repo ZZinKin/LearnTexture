@@ -16,6 +16,10 @@
 
 @implementation ASTextNodeViewController
 
+- (void)dealloc {
+    NSLog(@"ASTextNodeViewController dealloc ♻️");
+}
+
 - (instancetype)init {
     self = [super initWithNode:[ASDisplayNode new]];
     if (self) {
