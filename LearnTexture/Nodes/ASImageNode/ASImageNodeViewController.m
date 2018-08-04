@@ -49,9 +49,6 @@ static NSString *const NetworkImageURLString = @"https://avatars0.githubusercont
     }];
     
     [self.node addSubnode:imageNode];
-
-    ASDisplayNode *emptyNode = [ASDisplayNode new];
-    [self.node addSubnode:emptyNode];
     
     ASNetworkImageNode *network = [[ASNetworkImageNode alloc] init];
     network.placeholderColor = UIColor.lightGrayColor;
@@ -69,18 +66,14 @@ static NSString *const NetworkImageURLString = @"https://avatars0.githubusercont
     __weak typeof(self) wself = self;
     self.node.layoutSpecBlock = ^ASLayoutSpec * _Nonnull(__kindof ASDisplayNode * _Nonnull node, ASSizeRange constrainedSize) {
         if(!wself) return ASLayoutSpec.new; typeof(wself) sself = wself; //simply guard let `self` = self in Swift
-        // navigationBar area is invisible,so add an empty node as padding space
-        CGFloat navigationY = CGRectGetMaxY(sself.navigationController.navigationBar.frame);
-        emptyNode.style.height = ASDimensionMake(navigationY);
         
         // you can either provice the preferedSize of use the ratio spec for network image
 //        ASRatioLayoutSpec *rationSpec = [ASRatioLayoutSpec ratioLayoutSpecWithRatio:1.0 child:network];
         network.style.preferredSize = CGSizeMake(100, 100);
         
         ASStackLayoutSpec *mainStack = [ASStackLayoutSpec verticalStackLayoutSpec];
-        mainStack.children = ( //make the code look nicer
+        mainStack.children = ( //make the array look nicer
         {@[
-           emptyNode,
            //center the image
            [ASCenterLayoutSpec centerLayoutSpecWithCenteringOptions:ASCenterLayoutSpecCenteringXY sizingOptions:ASCenterLayoutSpecSizingOptionMinimumXY child:imageNode],
            [ASCenterLayoutSpec centerLayoutSpecWithCenteringOptions:ASCenterLayoutSpecCenteringXY sizingOptions:ASCenterLayoutSpecSizingOptionMinimumXY child:network]];
@@ -90,7 +83,9 @@ static NSString *const NetworkImageURLString = @"https://avatars0.githubusercont
         mainStack.flexWrap = YES;
         mainStack.spacing = 50;
         
-        return mainStack;
+        // navigationBar area is invisible, so we make the inset for stack
+        CGFloat navigationY = CGRectGetMaxY(sself.navigationController.navigationBar.frame);
+        return [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(navigationY, 0, 0, 0) child:mainStack];
     };
 }
 
