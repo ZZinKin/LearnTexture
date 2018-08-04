@@ -66,7 +66,6 @@ static NSString *const NetworkImageURLString = @"https://avatars0.githubusercont
     
     //layout is not allow to add or remove subnode
     // There would be a retain cycle if you use self directly
-    
     __weak typeof(self) wself = self;
     self.node.layoutSpecBlock = ^ASLayoutSpec * _Nonnull(__kindof ASDisplayNode * _Nonnull node, ASSizeRange constrainedSize) {
         if(!wself) return ASLayoutSpec.new; typeof(wself) sself = wself; //simply guard let `self` = self in Swift
@@ -74,16 +73,20 @@ static NSString *const NetworkImageURLString = @"https://avatars0.githubusercont
         CGFloat navigationY = CGRectGetMaxY(sself.navigationController.navigationBar.frame);
         emptyNode.style.height = ASDimensionMake(navigationY);
         
-        // center the image node
-        ASCenterLayoutSpec *center1 = [ASCenterLayoutSpec centerLayoutSpecWithCenteringOptions:ASCenterLayoutSpecCenteringXY sizingOptions:ASCenterLayoutSpecSizingOptionMinimumXY child:imageNode];
-        
         // you can either provice the preferedSize of use the ratio spec for network image
 //        ASRatioLayoutSpec *rationSpec = [ASRatioLayoutSpec ratioLayoutSpecWithRatio:1.0 child:network];
         network.style.preferredSize = CGSizeMake(100, 100);
-        ASCenterLayoutSpec *center2 = [ASCenterLayoutSpec centerLayoutSpecWithCenteringOptions:ASCenterLayoutSpecCenteringXY sizingOptions:ASCenterLayoutSpecSizingOptionMinimumXY child:network];
         
         ASStackLayoutSpec *mainStack = [ASStackLayoutSpec verticalStackLayoutSpec];
-        mainStack.children = @[emptyNode, center1, center2];
+        mainStack.children = ( //make the code look nicer
+        {@[
+           emptyNode,
+           //center the image
+           [ASCenterLayoutSpec centerLayoutSpecWithCenteringOptions:ASCenterLayoutSpecCenteringXY sizingOptions:ASCenterLayoutSpecSizingOptionMinimumXY child:imageNode],
+           [ASCenterLayoutSpec centerLayoutSpecWithCenteringOptions:ASCenterLayoutSpecCenteringXY sizingOptions:ASCenterLayoutSpecSizingOptionMinimumXY child:network]];
+            
+        });
+
         mainStack.flexWrap = YES;
         mainStack.spacing = 50;
         
