@@ -10,7 +10,7 @@ I am writing a better demo project for people learning Texture. Texture is a gre
 
 For this goal, I will:
 
-- Synthesis all the basic nodes and test most of the api interactively.
+- Cover most of the nodes, sometimes with layout specs.
 - Seperately display how each layout type works, then combine them and make them adjustable by using scrollbar.
 - Provide a mimic of an actural app.
 
