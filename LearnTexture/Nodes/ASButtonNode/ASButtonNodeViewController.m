@@ -31,6 +31,7 @@
         button.laysOutHorizontally = NO;
         [button setImage:[UIImage imageNamed:@"demo_icon"] forState:UIControlStateNormal];
         button.frame = CGRectMake(100, 100, 200, 250);
+        button.hitTestSlop = UIEdgeInsetsMake(-50, -50, -50, -50); //Extend the touch area
         _button = button;
     }
     return self;
@@ -42,6 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // you can add target-action to a textNode
     [_button addTarget:self action:@selector(tapButton:) forControlEvents:ASControlNodeEventTouchUpInside];
 }
 @end

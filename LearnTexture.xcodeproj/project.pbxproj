@@ -17,6 +17,8 @@
 		BCA1852F21143659008666CE /* TopNavigationNode.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA1852E21143659008666CE /* TopNavigationNode.m */; };
 		BCA1853A211484B3008666CE /* ASButtonNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA18539211484B3008666CE /* ASButtonNodeViewController.m */; };
 		CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34F4432113673F00DB3C83 /* MasterViewController.m */; };
+		CB34F4492115E43E00DB3C83 /* ASTextNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34F4482115E43E00DB3C83 /* ASTextNodeViewController.m */; };
+		CB34F44D2115EE8600DB3C83 /* ASImageNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34F44C2115EE8600DB3C83 /* ASImageNodeViewController.m */; };
 		CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA32D382113615F00B75E13 /* AppDelegate.m */; };
 		CBA32D412113616000B75E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D402113616000B75E13 /* Assets.xcassets */; };
 		CBA32D442113616000B75E13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA32D422113616000B75E13 /* LaunchScreen.storyboard */; };
@@ -44,6 +46,10 @@
 		BCA18539211484B3008666CE /* ASButtonNodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASButtonNodeViewController.m; sourceTree = "<group>"; };
 		CB34F4422113673F00DB3C83 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		CB34F4432113673F00DB3C83 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		CB34F4472115E43E00DB3C83 /* ASTextNodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTextNodeViewController.h; sourceTree = "<group>"; };
+		CB34F4482115E43E00DB3C83 /* ASTextNodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTextNodeViewController.m; sourceTree = "<group>"; };
+		CB34F44B2115EE8600DB3C83 /* ASImageNodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASImageNodeViewController.h; sourceTree = "<group>"; };
+		CB34F44C2115EE8600DB3C83 /* ASImageNodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASImageNodeViewController.m; sourceTree = "<group>"; };
 		CBA32D342113615F00B75E13 /* LearnTexture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnTexture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA32D372113615F00B75E13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA32D382113615F00B75E13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,18 +103,13 @@
 		BCA185122113F10C008666CE /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				CB34F4462115E40C00DB3C83 /* ASTextNode */,
 				BCA18522211407C0008666CE /* ASDisplayNode */,
 				BCA18523211407C9008666CE /* ASCellNode */,
 				BCA185372114847B008666CE /* ASButtonNode */,
+				CB34F44E2115EE8B00DB3C83 /* ASImageNode */,
 			);
 			path = Nodes;
-			sourceTree = "<group>";
-		};
-		BCA185132113F116008666CE /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Layouts;
 			sourceTree = "<group>";
 		};
 		BCA185142113F11D008666CE /* Demos */ = {
@@ -153,6 +154,31 @@
 			path = ASButtonNode;
 			sourceTree = "<group>";
 		};
+		CB34F4462115E40C00DB3C83 /* ASTextNode */ = {
+			isa = PBXGroup;
+			children = (
+				CB34F4472115E43E00DB3C83 /* ASTextNodeViewController.h */,
+				CB34F4482115E43E00DB3C83 /* ASTextNodeViewController.m */,
+			);
+			path = ASTextNode;
+			sourceTree = "<group>";
+		};
+		CB34F44A2115EC2800DB3C83 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		CB34F44E2115EE8B00DB3C83 /* ASImageNode */ = {
+			isa = PBXGroup;
+			children = (
+				CB34F44B2115EE8600DB3C83 /* ASImageNodeViewController.h */,
+				CB34F44C2115EE8600DB3C83 /* ASImageNodeViewController.m */,
+			);
+			path = ASImageNode;
+			sourceTree = "<group>";
+		};
 		CBA32D2B2113615F00B75E13 = {
 			isa = PBXGroup;
 			children = (
@@ -176,9 +202,9 @@
 			children = (
 				CBA32D372113615F00B75E13 /* AppDelegate.h */,
 				CBA32D382113615F00B75E13 /* AppDelegate.m */,
+				CB34F44A2115EC2800DB3C83 /* Layouts */,
 				BCA185112113F005008666CE /* Master */,
 				BCA185122113F10C008666CE /* Nodes */,
-				BCA185132113F116008666CE /* Layouts */,
 				BCA185142113F11D008666CE /* Demos */,
 				CBA32D402113616000B75E13 /* Assets.xcassets */,
 				CBA32D422113616000B75E13 /* LaunchScreen.storyboard */,
@@ -286,6 +312,8 @@
 				BCA1850D2113E869008666CE /* MasterCellNode.m in Sources */,
 				BCA1852C2114233C008666CE /* ColorfulCellNode.m in Sources */,
 				CB34F4442113673F00DB3C83 /* MasterViewController.m in Sources */,
+				CB34F4492115E43E00DB3C83 /* ASTextNodeViewController.m in Sources */,
+				CB34F44D2115EE8600DB3C83 /* ASImageNodeViewController.m in Sources */,
 				BCA1852621140885008666CE /* TextTableNodeController.m in Sources */,
 				BCA1853A211484B3008666CE /* ASButtonNodeViewController.m in Sources */,
 				CBA32D392113615F00B75E13 /* AppDelegate.m in Sources */,
